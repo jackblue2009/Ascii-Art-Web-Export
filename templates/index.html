@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>ASCII Art</title>
+
+</head>
+
+<body class="body">
+    <h1>Generate ASCII Art Words</h1>
+    <main>
+        <form action="/" method="post">
+            <div class="left-column">
+                <div class="left-column-div">
+                    <label for="txt">Enter your Text: </label><br>
+                    <textarea type="text" name="text" class="giventext" placeholder="Your Text" maxlength="1000"
+                        required></textarea>
+                </div>
+                <br>
+            </div>
+            <div class="right-column">
+                <div class="right-column-lift">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="banner">Select a Banner name: </label>
+                            </td>
+                            <td>
+                                <select name="banner" class="select" title="Select the banner">
+                                    <option value="standard">Standard</option>
+                                    <option value="shadow">Shadow</option>
+                                    <option value="thinkertoy">Thinkertoy</option>
+                                    <option value="3d">3D</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="align">Select an Align:</label>
+                            </td>
+                            <td>
+                                <select name="align" class="select" id="align" title="Select the align">
+                                    <option value="left">Left</option>
+                                    <option value="right">Right</option>
+                                    <option value="center">Center</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="file-type">Select the second file type:</label>
+                            </td>
+                            <td>
+                                <select name="file-type" class="select" id="align" title="Select the extra file format you need with the txt file.">
+                                    <option value="">No need</option>
+                                    <option value="doc">.doc</option>
+                                    <option value="md">.md</option>
+                                    <option value="sxw">.sxw</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="color">Select a Color: </label>
+                            </td>
+                            <td>
+                                <input name="color" type="color" id="color" title="Select the color">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="right-column-right">
+                    <label for="download">Download the files requested:</label>
+                    <div class="div-download">
+                        <p>Text file:</p>
+                        <p>{{.Downloadtxt}}</p>
+                    </div>
+                    <div class="div-download">
+                        <p>Second file:</p>
+                        <p>{{.Download2}}</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="btndiv">
+                <button type="submit">Submit</button>
+            </div>
+            <br>
+        </form>
+        <form action="/" method="get">
+            <textarea class="resultext" id="textarea"
+                style="color: '{{.Color}}'; background-color: '{{.Background}}'; text-align: '{{.Align}}'; font-size: 10px;"
+                disabled>{{.AsciiArtDraw}}</textarea>
+        </form>
+        <button id="increase-size" title="Increase-size of text">A+</button>
+        <button id="decrease-size" title="Decrease-size of text">A-</button>
+        <button id="shadow" title="Put shadow to the text">shadow</button>
+        <script src="js/common.js" type="text/javascript"></script>
+    </main>
+    <footer>
+        <p>Reboot01<sup>©</sup></p>
+    </footer>
+</body>
+
+</html>
