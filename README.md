@@ -15,6 +15,9 @@ Normal run in local host we use:
 go run main.go
 ```
 
+### Downdload to local file:
+After running the localhost server, in the webpage after generating text, you can click on 'Download' button to download that generated text to local txt file
+
 ### Docker Run:
 For run the web application in container using docker will be as follows:
 1. Create an image
